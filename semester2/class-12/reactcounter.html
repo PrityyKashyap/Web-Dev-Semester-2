@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>React intro</h2>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      const rootEle = document.querySelector("#root");
+
+      function Heading() {
+        const [count, setCount] = React.useState(0);
+
+        function sub() {
+       
+            setCount(count - 1);
+          
+        }
+
+        function reset() {
+          setCount(0);
+        }
+
+        function add() {
+          setCount(count + 1);
+        }
+
+        return (
+          <div className="counter-box">
+            <div>Counter App</div>
+
+            <div className="display">{count}</div>
+
+            <button onClick={sub}>-</button>
+            <button onClick={reset}>Reset</button>
+            <button onClick={add}>+</button>
+
+        
+          </div>
+        );
+      }
+
+      ReactDOM.render(<Heading />, rootEle);
+    </script>
+  </body>
+</html>
